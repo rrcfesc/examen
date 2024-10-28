@@ -20,6 +20,9 @@
     "dependencies": {
         "@popperjs/core": "^2.11.8",
         "bootstrap": "^5.3.3",
+        "datatables.net-dt": "^2.1.8",
+        "datatables.net-plugins": "^2.1.7",
+        "datatables.net-scroller-dt": "^2.4.3",
         "jquery": "^3.7.1",
         "sass": "^1.80.4"
     }
