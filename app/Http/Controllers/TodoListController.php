@@ -18,11 +18,11 @@ class TodoListController extends Controller
     public function getData()
     {
         $user = auth()->user();
-        $todoList = TodoList::select(['id', 'title', 'description', 'completed','created_at'])->where('user_id', $user->id) ;
+        $todoList = TodoList::select(['id', 'title', 'description', 'completed','created_at'])->where('user_id', $user->id);
 
         return DataTables::of($todoList)
             ->addColumn('action', function ($todoList) {
-                return '<a href="'.route('todo.edit', $todoList).'" class="text-blue-600 hover:underline">Edit</a> &nbsp;<a onclick="deleteTodo(this)" data-id="'.$todoList->id.'" href="#" class="text-blue-600 hover:underline">Borrar</a>';
+                return '<a href="' . route('todo.edit', $todoList) . '" class="text-blue-600 hover:underline">Edit</a> &nbsp;<a onclick="deleteTodo(this)" data-id="' . $todoList->id . '" href="#" class="text-blue-600 hover:underline">Borrar</a>';
             })->addColumn('created', function ($todoList) {
                 $createdAt = Carbon::parse($todoList->created_at);
                 return $createdAt->diffForHumans();
@@ -47,7 +47,7 @@ class TodoListController extends Controller
             'completed' => 'boolean',
         ]);
 
-        $requestData =array_merge($request->all(), ['user_id' => $user->id]);
+        $requestData = array_merge($request->all(), ['user_id' => $user->id]);
         unset($requestData['_token']);
 
         TodoList::create($requestData);

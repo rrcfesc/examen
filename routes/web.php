@@ -19,4 +19,4 @@ Route::middleware('auth')->group(function () {
     Route::resource('todo', TodoListController::class);
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

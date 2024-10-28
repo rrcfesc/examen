@@ -52,6 +52,6 @@ class TodoListDataTable extends DataTable
 
     protected function filename(): string
     {
-        return 'Todo_'.date('YmdHis');
+        return 'Todo_' . date('YmdHis');
     }
 }

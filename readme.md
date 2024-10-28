@@ -47,6 +47,8 @@ $ docker-compose exec backend bash -c "npm run dev"
 
 ## Acceso
 
+Url: http://localhost:8300/
+
 ```text
 User: test@example.com
 Password: password
